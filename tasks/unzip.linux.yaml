@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  godot:
+    desc: Extract bin/godot.64 from zips/godot_x11.zip
+    cmds: 
+      - unzip -o zips/godot_x11.zip -d bin
+    sources: 
+      - zips/godot_x11.zip
+    generates: 
+      - bin/godot_x11.64
+
+  godot:headless:
+    desc: Extract bin/godot_headless.64 from zips/godot_headless.zip
+    cmds: 
+      - unzip -o zips/godot_headless.zip -d bin
+    sources: 
+      - zips/godot_headless.zip
+    generates: 
+      - bin/godot_headless.64

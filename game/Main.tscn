@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/textures/ui/frame.png" type="Texture" id=1]
+
+[node name="Main" type="Node"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Camera" type="Camera2D" parent="World"]
+current = true
+
+[node name="Frame" type="Sprite" parent="World/Camera"]
+texture = ExtResource( 1 )
