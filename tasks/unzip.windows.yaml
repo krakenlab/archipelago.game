@@ -1,0 +1,26 @@
+---
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  pixelorama:
+    desc: Extract pixelorama binary
+    cmds:
+      - PowerShell -Command "Expand-Archive -LiteralPath zip\pixelorama\win64.zip -DestinationPath bin\pixelorama"
+    sources:
+      - zip\pixelorama\win64.zip
+    generates:
+      - bin\pixelorama\Pixelorama.exe
+  godot:
+    desc: Extract bin\godot.exe and bin\godot_console.cmd from zips\godot_win.zip
+    cmds: 
+      - PowerShell -Command "Expand-Archive -LiteralPath zips\godot_win.zip -DestinationPath bin"
+      - PowerShell -Command "Move-Item -Path bin\godot\godot_console.cmd -Destination bin\godot_console.cmd"
+      - PowerShell -Command "Move-Item -Path bin\godot\godot.exe -Destination bin\godot.exe"
+      - PowerShell -Command "Remove-Item -Path bin\godot"
+    sources: 
+      - zips\godot_win.zip
+    generates: 
+      - bin\godot_console.cmd
+      - bin\godot.exe

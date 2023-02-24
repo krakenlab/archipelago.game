@@ -1,4 +1,6 @@
 # Taskfile generated files
 .task
+bin/godot.exe
 bin/godot_x11.64
+bin/godot_console.cmd
 bin/godot_headless.64
